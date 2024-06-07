@@ -4,6 +4,14 @@ from dataclasses import dataclass, field
 
 
 def generate_id() -> str:
+    """
+    Generate a random string of uppercase letters with a length of 12.
+
+    Returns:
+        str: The randomly generated string.
+
+    """
+
     return "".join(random.choices(string.ascii_uppercase, k=12))
 
 
@@ -24,12 +32,13 @@ class Person:
     id: str = field(init=False, default_factory=generate_id)
     _search_string: str = field(init=False, repr=False)
 
+    @property
     def __post_init__(self):
         self._search_string = f"{self.name} {self.address}"
 
 
 def main() -> None:
-    person = Person(name="John", address="123 Main St")
+    person: Person = Person(name="John", address="123 Main St")
     print(person)
 
 
