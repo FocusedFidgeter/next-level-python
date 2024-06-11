@@ -14,9 +14,12 @@ async def fetch(url: str) -> str:
     return f"Data from {url}"
 
 
-# TODO: Implement the retrieve_data function
-async def retrieve_data(urls: list[str]) -> list[str]:
-    pass
+async def async_retrieve_data(urls: list[str]) -> list[str]:
+    tasks = [
+        fetch(url) for url in urls
+    ]  # this is a list constructed from a for loop processing the `urls` list object.
+    result = await asyncio.gather(*tasks)
+    return result
 
 
 async def main() -> None:
@@ -26,7 +29,7 @@ async def main() -> None:
         "https://www.python.org",
     ]
 
-    # TODO: Use the retrieve_data function to retrieve data from the provided URLs concurrently
+    print(await async_retrieve_data(urls))
 
 
 if __name__ == "__main__":

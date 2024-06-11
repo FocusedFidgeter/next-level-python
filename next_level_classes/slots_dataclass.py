@@ -30,7 +30,7 @@ class EmployeeSlots:
 
 # uncomment the class below that uses multiple inheritance and see the error
 # class PersonEmployee(PersonSlots, EmployeeSlots):
-#    pass
+#     pass
 
 
 def get_set_delete(person: Person | PersonSlots):

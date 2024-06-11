@@ -17,7 +17,8 @@ def main() -> None:
     data = DataSet([1, 2, 3, 4, 5])
     print(data.stdev)
     print(data.stdev)
-    print(data.stdev)
+    data1 = DataSet([2, 3, 4, 5, 6])
+    print(data1.stdev)
 
 
 if __name__ == "__main__":

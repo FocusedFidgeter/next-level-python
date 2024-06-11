@@ -7,6 +7,7 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 from typing import Collection
+import itertools
 
 
 # Note: I'm using the Collection type hint here, which is a generic type hint
@@ -19,7 +20,10 @@ def calculate_average(numbers: Collection[int]) -> float:
 def calculate_combination_averages(data: list) -> list[float]:
     # TODO: Use itertools to generate all possible combinations of length 2 from the data list
     # TODO: Calculate the average of each combination and store the results in a new list
-    ...
+    combinations: list[float] = itertools.combinations(data, 2)
+    averages: list[float] = [calculate_average(combination) for combination in combinations]
+
+    return averages
 
 
 def main() -> None:

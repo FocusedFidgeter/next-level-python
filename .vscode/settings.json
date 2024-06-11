@@ -1,11 +1,11 @@
 {
-    "python.analysis.typeCheckingMode": "strict",
-    "editor.formatOnSaveMode": "file",
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-        "source.organizeImports": true
-    },
-    "python.formatting.provider": "black",
-    "python.linting.enabled": false,
-    "python.linting.pylintEnabled": false
+  "python.analysis.typeCheckingMode": "strict",
+  "editor.formatOnSaveMode": "file",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+  "python.formatting.provider": "black",
+  "python.linting.enabled": false,
+  "python.linting.pylintEnabled": false
 }
